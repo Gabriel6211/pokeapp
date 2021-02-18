@@ -1,0 +1,25 @@
+$main-color: #005dab;
+$secondary-color: #1C377B;
+$third-color:#2C3E50;
+
+$button-login-color:#16c465;
+$button-login-hover: green;
+
+$button-logout-color:#C0392B;
+$button-logout-hover:#7B241C;
+
+
+.background {
+        background: url('../assets/images/login.jpg');
+    
+        height: 100%; 
+    
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        display:flex;
+        align-items: center;
+        justify-content: center;
+}
+
