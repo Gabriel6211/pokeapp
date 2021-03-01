@@ -1,8 +1,6 @@
 import { TYPES } from '../constants/actionTypes';
 
 const initialState = {
-  favoritePokemons: [],
-  initialPokemon:{},
   isLoggedIn: false,
 }
 

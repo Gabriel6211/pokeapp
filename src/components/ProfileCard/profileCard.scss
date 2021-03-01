@@ -1,0 +1,33 @@
+@import "../../assets/styles.scss";
+
+.profile-card {
+  min-height: 40vw;
+  width: 40vw;
+  background-color: white;
+  border-radius: 40px;
+  margin-top: 2vw;
+  .card-title {
+    background: url('../../assets/images/bulbasaur.jpg');
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    height: 15vw; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    .profile-pic {
+      border-radius: 50%;
+      height: 6vw;
+      width: 6vw;
+      border: 8px solid white;
+      position: fixed;
+      top: 17vw;
+    }
+  }
+  .card-info {
+    margin-top:5vw;
+  }
+}

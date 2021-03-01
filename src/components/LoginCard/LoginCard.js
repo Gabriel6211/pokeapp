@@ -80,4 +80,4 @@ const mapStateToProps = (state) => ({ user: state.user })
   
 const mapDispatchToProps = {login} 
 
-  export default connect(mapStateToProps, mapDispatchToProps)(withRouter(LoginCard));
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(LoginCard));

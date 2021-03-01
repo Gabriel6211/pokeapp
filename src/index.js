@@ -7,9 +7,11 @@ import App from './App';
 import { createStore, combineReducers } from 'redux';
 
 import userReducer from './reducers/userReducer';
+import pokemonReducer from './reducers/pokemonReducer';
 
 const rootReducer = combineReducers({
-  user: userReducer
+  user: userReducer,
+  pokemon: pokemonReducer
 });
 
 const store = createStore(
