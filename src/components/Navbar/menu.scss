@@ -1,4 +1,4 @@
-@import "../../assets/styles.scss";
+@import "../../assets/general.scss";
 
 .upside-bar {
     display:flex;
@@ -9,7 +9,8 @@
     background-color: $main-color;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     align-items: center;
-
+    @include boxShadow; 
+    
     .menu-buttons {
         display:flex;
         flex-direction: row;
@@ -26,10 +27,10 @@
             flex-direction: row;
             align-items: center;
             justify-content: center;
-            margin-right: 20px;
-            
-            width: 90px;
+            margin-right: 25px;
+            width: 80px;
             height: 47px;
+            border-radius: 20px;
             cursor: pointer;
             .dropdown-avatar {
                 border-radius: 50%;
@@ -38,6 +39,9 @@
                 border-color:black;
                 margin-right: 5px;
             }
+            &.toggled {
+                background-color: $secondary-color;
+            }
         }
 
         .toggle-dropdown:hover {
@@ -45,25 +49,21 @@
         }
         
         .dropdown-div {
-            display:flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
             position:fixed;
-            border-style:solid;
-            border-color:gray;
-            width:140px;
-            height: 0px;
-            top:48px;
-            right:20px;
+            top:60px;
+            right:10px;
             opacity: 0;
             transition: all .3s ease;
+            button {
+                background-color: transparent;
+                border-style: none;
+                cursor: pointer;
+            }
             .dropdown-button {
                 margin-left: 10px;
             }
             &.animation {
                 opacity:1;
-                height:80px;
 
             }
         }
@@ -74,26 +74,6 @@
                 transform:rotate(180deg)
             }
         }
-    }
-
-    .logout-button {
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        color:white;
-        background-color: $button-logout-color;
-        border: 1px solid transparent;
-        border-radius: 10px;
-        height: 37px;
-        width: 120px;
-        margin-right: 10px;
-        margin-left: 70%;
-        cursor: pointer;
-    }
-    .logout-button:hover {
-        background-color: $button-logout-hover;
     }
 
     .title {
@@ -123,9 +103,6 @@
     }
 }
 
-.landing-page {
-    
-}
 
 
 

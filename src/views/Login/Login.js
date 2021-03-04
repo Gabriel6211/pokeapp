@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 
-import LoginCard from "../components/LoginCard/LoginCard.js"
+import LoginCard from "../../components/LoginCard/LoginCard.js"
 
-import "../assets/styles.scss"
+import "./login.scss"
 
 class Login extends Component {
     render() {

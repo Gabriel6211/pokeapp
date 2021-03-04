@@ -1,18 +1,17 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import { ToastContainer, toast } from 'react-toastify';
 import { withRouter} from "react-router-dom";
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types'
 
+import { ToastContainer, toast } from 'react-toastify';
 import {FaEnvelope} from 'react-icons/fa';
 import {FaKey} from 'react-icons/fa';
 import {IconContext} from "react-icons";
-
-import "../../assets/styles.scss"
-import "./loginCard.scss"
-import 'react-toastify/dist/ReactToastify.css';
 import { login } from '../../actions/userActions'
 
+import "./loginCard.scss"
+import 'react-toastify/dist/ReactToastify.css';
 
 class LoginCard extends Component {
 
@@ -24,7 +23,7 @@ class LoginCard extends Component {
 
 
     handleChange = e => {
-        this.setState({[e.target.name]: e.target.value});
+        this.setState({ [e.target.name]: e.target.value });
     }
 
     handleSubmit = async (event) => {
@@ -34,7 +33,7 @@ class LoginCard extends Component {
 
             event.preventDefault();
             if(email && password) {
-                const loginRequest = await axios.post('https://reqres.in/api/login',  {email , password});
+                await axios.post('https://reqres.in/api/login',  {email , password});
                 const user = await axios.get('https://reqres.in/api/users/4')
                 login(user.data.data) // cityslicka
                 toast.success("Inicio sesión satisfactoriamente.")
@@ -50,7 +49,7 @@ class LoginCard extends Component {
 
     render() {
         return (
-            <div className="card">
+            <div className="login-card">
                 <div className="card-top">
                     <span className="title">Inicio de Sesion</span>
                 </div>
@@ -79,5 +78,9 @@ class LoginCard extends Component {
 const mapStateToProps = (state) => ({ user: state.user })
   
 const mapDispatchToProps = {login} 
+
+LoginCard.propTypes = {
+    login: PropTypes.func
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(LoginCard));

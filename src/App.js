@@ -1,14 +1,15 @@
 import './App.css';
-import React, { Component } from 'react';
+import React from 'react';
 import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types';
 
 import './index.css';
+import './assets/general.scss'
 
-import Home from './views/home.js'
-import Login from './views/login.js'
-import Pokemons from './views/pokemons.js'
+import Home from './views/Home/Home.js'
+import Login from './views/Login/Login.js'
+import Pokemons from './views/Pokemons/Pokemons.js'
 
 const App = (props) => {
  
@@ -25,6 +26,7 @@ const App = (props) => {
           </Route>
           <PrivateRoute path="/pokemons" component={Pokemons}/>
           <PrivateRoute path="/home" component={Home}/>
+          <PrivateRoute path="/" component={Home}/>
         </Switch>
       </BrowserRouter>
     </div>

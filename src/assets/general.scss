@@ -1,0 +1,31 @@
+$main-color: #E76F51;
+$secondary-color: #F4A261;
+$third-color:#2C3E50;
+
+$blue: #264653;
+$green: #2A9D8F;
+$yellow: #E9C46A;
+$orange: #F4A261;
+$red: #E76F51;
+
+
+
+
+@mixin boxShadow {
+        box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, .2), 0px 1px 1px 0px rgba(0, 0, 0, .14), 0px 1px 3px 0px rgba(0, 0, 0, .12);
+}
+
+::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
+     
+    ::-webkit-scrollbar-track {
+        opacity: 0;
+    }
+     
+    ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: lightgray;
+    }
+

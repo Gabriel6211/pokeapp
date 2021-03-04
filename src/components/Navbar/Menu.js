@@ -1,16 +1,18 @@
 import React, {Component} from 'react';
-import {IconContext} from "react-icons"
-import { IoMdArrowDropdown } from "react-icons/io"
 import {Link} from "react-router-dom"
 import { connect } from 'react-redux';
+
 import PropTypes from 'prop-types';
 import { logout } from '../../actions/userActions'
 import classNames  from "classnames"
+import Card from '../Card/Card'
 
+import {IconContext} from "react-icons"
+import { IoMdArrowDropdown } from "react-icons/io"
+import { ImUser } from "react-icons/im"
+import { RiLogoutBoxFill } from "react-icons/ri"
 
 import './menu.scss';
-import '../../assets/styles.scss'
-
 
 class Menu extends Component {
 
@@ -28,10 +30,9 @@ class Menu extends Component {
     }
 
     render() {
-
+        const toggleDropdown = classNames('toggle-dropdown', { 'toggled': this.state.toggleDropdown })
         const dropDownClass = classNames('rotate', { 'down': this.state.toggleDropdown })
-
-        const dropdownDiv = classNames('dropdown-div', { 'animation': this.state.toggleDropdown })
+        const dropdownDiv = classNames('dropdown-div', { 'animation': this.state.toggleDropdown})
 
         return (
             <div className="upside-bar">
@@ -41,19 +42,28 @@ class Menu extends Component {
                     <Link to="/pokemons" className="menu-button">Pokemons</Link>
                 </div>
                 <div className="dropdown-menu">
-                    <div className="toggle-dropdown" onClick={this.handleDropdown} style={this.state.toggleDropdown ? {borderTopLeftRadius:'20px', borderTopRightRadius:'20px', backgroundColor:'#1C377B'} : {borderRadius:'50px'}}>
-                        <img className="dropdown-avatar" src={this.props.user.avatar} />
-                        <IconContext.Provider value={{style: {marginRight:'10px', color:'white', fontSize:'20px' }}}> <IoMdArrowDropdown className={dropDownClass}/> </IconContext.Provider>
+                    <div className={toggleDropdown} onClick={this.handleDropdown} >
+                        <img alt="avatar" className="dropdown-avatar" src={this.props.user.avatar} />
+                        <IconContext.Provider value={{style: {marginRight:'10px', color:'white', fontSize:'20px' }}}>
+                            <IoMdArrowDropdown className={dropDownClass}/>
+                        </IconContext.Provider>
                     </div>
-                        <div className={dropdownDiv}>
-                            <button className="dropdown-button" style={{marginBottom:'10px'}}>Perfil</button>
-                            <button className="dropdown-button">Logout</button>
-                        </div>
-                        
+                        <Card className={dropdownDiv}>
+                            <button> 
+                                <IconContext.Provider value={{style: {fontSize:'20px' }}}> 
+                                    <ImUser/> 
+                                </IconContext.Provider>
+                                <span>Perfil</span>
+                            </button>
+                            <hr/>
+                            <button> 
+                                <IconContext.Provider value={{style: {fontSize:'20px' }}}> 
+                                    <RiLogoutBoxFill/> 
+                                </IconContext.Provider> 
+                                <span>Logout</span>
+                            </button>
+                        </Card> 
                 </div>
-                
-                {/*<button onClick={this.handleLogout} className="logout-button"><IconContext.Provider value={{style: {marginRight:'10px'}}}><BiLogOut/></IconContext.Provider>Logout</button>*/}
-            
             </div>
         )
     }

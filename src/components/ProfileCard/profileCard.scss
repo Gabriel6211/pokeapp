@@ -1,33 +1,91 @@
-@import "../../assets/styles.scss";
+@import "../../assets/general.scss";
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@700&family=PT+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap');
 
-.profile-card {
-  min-height: 40vw;
-  width: 40vw;
-  background-color: white;
-  border-radius: 40px;
-  margin-top: 2vw;
-  .card-title {
-    background: url('../../assets/images/bulbasaur.jpg');
-    border-top-left-radius: 40px;
-    border-top-right-radius: 40px;
-    height: 15vw; 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
+
+
+.profile-container {
+  height: 100%;
+  .profile-card {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    position: relative;
+    align-items: center;
+    height: calc(50% - 30px);
+    background-color: white;
+
+    
     .profile-pic {
-      border-radius: 50%;
-      height: 6vw;
-      width: 6vw;
-      border: 8px solid white;
-      position: fixed;
-      top: 17vw;
+      background: url('../../assets/images/profile-pic.jpg');
+      @include boxShadow;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 10rem;
+      height: 10rem;
+      border-radius: 100%;
+    }
+  
+    .show-pokemon:hover {
+      background-color: $secondary-color;
+    }
+  
+    .show-pokemon:active {
+      background-color: $third-color;
+    }
+  
+    .card-info {
+      margin: 1.5rem;
+      width: 100%;
+  
+      .username {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color:$main-color;
+        font-family: 'Oxygen', sans-serif;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+  
+      .description {
+        color: #756878;
+        line-height: 25px;
+        font-family: 'PT Sans', sans-serif;
+        font-size: 16px;
+      }
+  
+      .numbers-indicator {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        
+        .indicator {
+          display: flex;
+          flex-direction: column;
+          font-family: 'Oxygen', sans-serif;
+        }
+        
+      }
+  
     }
   }
-  .card-info {
-    margin-top:5vw;
+  
+  .about-me {
+    height: calc(50% - 28px);
+    margin-top: 20px;
+    .title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color:$main-color;
+      font-family: 'Oxygen', sans-serif;
+    }
+    .description {
+      font-family: 'Oxygen', sans-serif;
+      text-align: left;
+      margin: 0 15px;
+    }
   }
+
 }
