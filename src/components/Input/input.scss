@@ -1,0 +1,44 @@
+@import "../../assets/general.scss";
+
+.search-input {
+    height: 30px;
+    width: 290px;
+    font-size: 15px;
+    font-family: 'PT Sans', sans-serif;
+    border: none;
+    &:focus {
+        outline: none;
+    }
+    &:focus ~ .placeholder,
+    &:valid ~ .placeholder {
+        color: $secondary-color;
+        font-weight: 700;
+        font-size: 17px;
+        transform:translateY(-25px)
+    }
+    &:focus ~ .underline,
+    &:valid ~ .underline {
+        transform: scaleX(1);
+    }
+    border-bottom: 1px solid gray;
+    
+}
+
+.underline {
+    position: absolute;
+    top:46px;
+    height: 2px;
+    width: 295px;
+    background-color: $main-color;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.placeholder {
+    font-family: 'PT Sans', sans-serif;;
+    position: absolute;
+    left: 5px;
+    color: grey;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}

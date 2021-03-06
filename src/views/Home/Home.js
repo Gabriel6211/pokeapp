@@ -1,14 +1,34 @@
 import React, {Component, Fragment} from 'react';
 
-import Menu from '../../components/Navbar/Menu.js'    
-import Profile from '../Profile/Profile'
+import Card from '../../components/Card/Card'
+import Input from '../../components/Input/Input'
+
+import { MdSearch } from 'react-icons/md'
+
+import './home.scss'
 
 class Home extends Component {
+
+    state = {
+        searchInput: ''
+    }
+
+    handleChange = e => {
+        this.setState({ [e.target.name]: e.target.value });
+    }
+
+
+    //<button className="search-button" onClick={this.handleSearch}><MdSearch/></button>
     render() {
-        return <Fragment>
-            <Menu/>
-            <Profile/>
-        </Fragment>
+        return <div className="container">
+            <Card className="home-card">
+                <div className="search-section">
+                    <Input text="Buscar pokemon..." handleChange={this.handleChange}/>
+                </div>
+            </Card>
+        </div>
+        
+      
     }
 }
 

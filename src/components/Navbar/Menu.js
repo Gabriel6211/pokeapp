@@ -8,7 +8,6 @@ import classNames  from "classnames"
 import Card from '../Card/Card'
 
 import {IconContext} from "react-icons"
-import { IoMdArrowDropdown } from "react-icons/io"
 import { ImUser } from "react-icons/im"
 import { RiLogoutBoxFill } from "react-icons/ri"
 
@@ -31,7 +30,6 @@ class Menu extends Component {
 
     render() {
         const toggleDropdown = classNames('toggle-dropdown', { 'toggled': this.state.toggleDropdown })
-        const dropDownClass = classNames('rotate', { 'down': this.state.toggleDropdown })
         const dropdownDiv = classNames('dropdown-div', { 'animation': this.state.toggleDropdown})
 
         return (
@@ -44,20 +42,17 @@ class Menu extends Component {
                 <div className="dropdown-menu">
                     <div className={toggleDropdown} onClick={this.handleDropdown} >
                         <img alt="avatar" className="dropdown-avatar" src={this.props.user.avatar} />
-                        <IconContext.Provider value={{style: {marginRight:'10px', color:'white', fontSize:'20px' }}}>
-                            <IoMdArrowDropdown className={dropDownClass}/>
-                        </IconContext.Provider>
                     </div>
                         <Card className={dropdownDiv}>
-                            <button> 
-                                <IconContext.Provider value={{style: {fontSize:'20px' }}}> 
+                            <Link className="profile-button" to="/perfil"> 
+                                <IconContext.Provider value={{style: {fontSize:'20px', marginRight:'10px' }}}> 
                                     <ImUser/> 
                                 </IconContext.Provider>
                                 <span>Perfil</span>
-                            </button>
+                            </Link>
                             <hr/>
-                            <button> 
-                                <IconContext.Provider value={{style: {fontSize:'20px' }}}> 
+                            <button onClick={this.handleLogout}> 
+                                <IconContext.Provider value={{style: {fontSize:'20px', marginRight:'10px' }}}> 
                                     <RiLogoutBoxFill/> 
                                 </IconContext.Provider> 
                                 <span>Logout</span>

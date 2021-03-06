@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import classNames  from "classnames"
 import { AiFillStar } from "react-icons/ai"
 import Card from '../Card/Card'
+import {IconContext} from "react-icons"
 
 const COLORS = {
     fire: '#FDDFDF',
@@ -41,11 +42,15 @@ const PokeCard = ({ pokemon, addFavoritePokemon, isFavorite, removeFavoritePokem
             </div>
         </div>
         <div className="info-wrapper">
-            <span>#00{pokemon.id}</span>
-            <span>{pokemon.name}</span>
-            <span>{pokemon.types[0].type.name}</span>
+            <span className="id">#00{pokemon.id}</span>
+            <span className="name">{pokemon.name}</span>
+            <span className="type">Type: {pokemon.types[0].type.name}</span>
         </div>
-        { showFavoriteButton ? <button className={favoriteButton} onClick={handleClick}> <AiFillStar /> </button> : null }
+        { showFavoriteButton ?  
+            <div className={favoriteButton} onClick={handleClick}>
+                <AiFillStar />
+            </div>  
+        : null }
     </Card>
 }
 

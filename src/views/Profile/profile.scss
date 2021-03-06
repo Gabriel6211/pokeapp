@@ -73,9 +73,10 @@
 .poke-card {
         display: flex;
         flex-direction: column;
-        height: 200px;
+        height: 220px;
         width: 160px;
         justify-content: space-around;
+        position:relative;
         .photo-wrapper {
                 display: flex;
                 justify-content: center;
@@ -97,17 +98,59 @@
         .info-wrapper {
                 display: flex;
                 flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin-top: 15px;
+                margin-bottom: 10px;
+                .id {
+                        background-color: white;
+                        width: 50px;
+                        border-radius: 8px;
+                        font-weight: 600;
+                }
+                .name {
+                        font-size: 22px;
+                        font-weight: 500;
+                        text-transform: capitalize;
+                }
+                .type {
+                        font-size: 13px;
+                        font-weight: 500;
+                }
+        }
+        
+        .favorite-button {
+                border-radius: 100%;
+                color: #CCCCCC;
+                font-size: 19px;
+                background-color: rgba(255,255,255,0.6);
+                width: 28px;
+                height: 28px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                top: 10px;
+                left: 142px;
+                transition: all 0.25s ease-out;
+                &:hover {
+                        transform: scale(1.2);
+                        color: #7E7E7E;
+                }
+                &.is-favorite {
+                        color: gold;
+                }
         }
 }
 
 // pokemons list
 
 .pokemons-list {
- display: grid;
- grid-template-columns: repeat(5, 160px);
- grid-template-rows: repeat(4, 200px);
- grid-column-gap: 7px;
- grid-row-gap: 7px;
+        display: grid;
+        grid-template-columns: repeat(5, 160px);
+        grid-template-rows: repeat(4, 200px);
+        grid-column-gap: 7px;
+        grid-row-gap: 7px;
 }
 
 .medal-card {

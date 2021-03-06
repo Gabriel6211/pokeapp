@@ -16,8 +16,8 @@ import 'react-toastify/dist/ReactToastify.css';
 class LoginCard extends Component {
 
     state = {
-        email: '',
-        password: '',
+        email: 'eve.holt@reqres.in',
+        password: 'cityslicka',
         loginSuccesfull: false
     };
 

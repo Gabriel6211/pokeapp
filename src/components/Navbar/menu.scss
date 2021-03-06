@@ -1,4 +1,5 @@
 @import "../../assets/general.scss";
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
 
 .upside-bar {
     display:flex;
@@ -27,37 +28,46 @@
             flex-direction: row;
             align-items: center;
             justify-content: center;
-            margin-right: 25px;
-            width: 80px;
-            height: 47px;
+            margin-right: 45px;
             border-radius: 20px;
             cursor: pointer;
+            height: 46px;
+            width: 46px;
+            transition: all 0.25s ease;
             .dropdown-avatar {
                 border-radius: 50%;
                 width: 40px;
                 height: 40px;
                 border-color:black;
-                margin-right: 5px;
             }
             &.toggled {
-                background-color: $secondary-color;
+                background-color: rgba(178, 30, 53, 0.6);
             }
-        }
-
-        .toggle-dropdown:hover {
-            background-color: $secondary-color;
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.6);
+                width: 46px;
+                height: 46px;
+                border-radius: 50%;
+            }
         }
         
         .dropdown-div {
-            position:fixed;
-            top:60px;
-            right:10px;
+            position:absolute;
+            top:62px;
+            right:20px;
             opacity: 0;
-            transition: all .3s ease;
-            button {
+            transition: all .4s ease;
+            button, .profile-button {
+                text-decoration: none;
+                color: black;
+                font-family: 'PT Sans', sans-serif;
+                font-size: 15px;
                 background-color: transparent;
                 border-style: none;
                 cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;;
             }
             .dropdown-button {
                 margin-left: 10px;
@@ -65,13 +75,6 @@
             &.animation {
                 opacity:1;
 
-            }
-        }
-
-        .rotate {
-            transition: all .3s linear;
-            &.down {
-                transform:rotate(180deg)
             }
         }
     }
