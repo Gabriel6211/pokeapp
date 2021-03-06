@@ -2,6 +2,8 @@ import React from 'react';
 import Card from '../Card/Card'
 import PropTypes from 'prop-types'
 
+import "./medalCard.scss"
+
 const COLORS = {
     gold: '#D8BB78',
     silver: '#C4CACE',
@@ -21,7 +23,7 @@ const MedalCard = ({ medalImg, medalName, type }) => {
             </div>
         </div>
         <div className="info-wrapper">
-            <span>{medalName}</span>
+            <span className="medal-name">{medalName}</span>
         </div>
     </Card>
 }

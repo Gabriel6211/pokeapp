@@ -43,7 +43,7 @@
                         grid-template-columns: repeat(4, 190px);
                         grid-auto-rows: 200px;
                         grid-column-gap: 7px; 
-                        grid-row-gap: 40px;
+                        grid-row-gap: 50px;
                 }
 
                 .medals-section {
@@ -119,38 +119,7 @@
                 }
         }
         
-        .favorite-button {
-                border-radius: 100%;
-                color: #CCCCCC;
-                font-size: 19px;
-                background-color: rgba(255,255,255,0.6);
-                width: 28px;
-                height: 28px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                position: absolute;
-                top: 10px;
-                left: 142px;
-                transition: all 0.25s ease-out;
-                &:hover {
-                        transform: scale(1.2);
-                        color: #7E7E7E;
-                }
-                &.is-favorite {
-                        color: gold;
-                }
-        }
-}
-
-// pokemons list
-
-.pokemons-list {
-        display: grid;
-        grid-template-columns: repeat(5, 160px);
-        grid-template-rows: repeat(4, 200px);
-        grid-column-gap: 7px;
-        grid-row-gap: 7px;
+      
 }
 
 .medal-card {

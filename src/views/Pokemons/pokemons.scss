@@ -1,6 +1,6 @@
 @import "../../assets/general.scss";
 
-.pokemon-list {
+.list {
     align-items: center;
     justify-content: center;
     margin: 30px 0;
@@ -8,4 +8,27 @@
     grid-template-columns: repeat(8, 160px);
     grid-column-gap: 30px;
     grid-row-gap: 10px;
+}
+
+.favorite-button {
+    border-radius: 100%;
+    color: #CCCCCC;
+    font-size: 19px;
+    background-color: rgba(255,255,255,0.6);
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 10px;
+    left: 142px;
+    transition: all 0.25s ease-out;
+    &:hover {
+            transform: scale(1.2);
+            color: #7E7E7E;
+    }
+    &.is-favorite {
+            color: gold;
+    }
 }

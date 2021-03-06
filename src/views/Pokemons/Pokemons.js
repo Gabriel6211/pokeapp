@@ -34,7 +34,7 @@ class Pokemons extends Component {
 
     render() {
         if(this.state.pokemons.length === 0) return <h3>Loading...</h3>
-        return <div className="pokemon-list">
+        return <div className="list">
             {this.state.pokemons.map((value, index) => {
                 return <PokeCard key={index} pokemon={value.data} showFavoriteButton={true} /> 
             })}
