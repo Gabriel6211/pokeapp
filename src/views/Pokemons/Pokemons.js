@@ -18,7 +18,7 @@ class Pokemons extends Component {
 
         let pokemonsArray = []
 
-        for(var i = 1; i <= 96 ; i++) {
+        for(var i = 1; i <= 16 ; i++) {
             const pokemon = await axios.get('https://pokeapi.co/api/v2/pokemon/' + i)
             pokemonsArray.push(pokemon)
         }

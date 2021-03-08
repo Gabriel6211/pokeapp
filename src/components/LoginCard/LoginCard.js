@@ -16,8 +16,8 @@ import 'react-toastify/dist/ReactToastify.css';
 class LoginCard extends Component {
 
     state = {
-        email: 'eve.holt@reqres.in',
-        password: 'cityslicka',
+        username: 'Gabriel',
+        password: '123',
         loginSuccesfull: false
     };
 
@@ -28,12 +28,12 @@ class LoginCard extends Component {
 
     handleSubmit = async (event) => {
         try {
-            const { email, password } = this.state
+            const { username, password } = this.state
             const { login, history } = this.props
 
             event.preventDefault();
-            if(email && password) {
-                await axios.post('https://reqres.in/api/login',  {email , password});
+            if(username && password) {
+                await axios.post('https://reqres.in/api/login',  {username , password});
                 const user = await axios.get('https://reqres.in/api/users/4')
                 login(user.data.data) // cityslicka
                 toast.success("Inicio sesión satisfactoriamente.")
@@ -59,7 +59,7 @@ class LoginCard extends Component {
                             <div className="icon-holder">
                                 <IconContext.Provider value={{style: {color:'white'}}}><FaEnvelope/></IconContext.Provider>
                             </div>
-                            <input className="mail" placeholder="Mail" name="email" type="text" value={this.state.email} onChange={this.handleChange}/>
+                            <input className="mail" placeholder="Username" name="username" type="text" value={this.state.username} onChange={this.handleChange}/>
                         </div>
                         <div className="input">
                             <div className="icon-holder">
